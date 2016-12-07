@@ -40,10 +40,13 @@ if __name__ == '__main__':
 			shutil.copy(full_demo_path, original_demos_dir)
 
 
-		new_demo_name = map_name+"_"+demo_file.replace(path, '')
+		new_demo_name = demo_file\
+						.replace(path, '')\
+						.replace('.dem', '')\
+						+"_"+map_name+".dem"
 
 		print "Renaming "+demo_file+" -> "+new_demo_name
 
 		os.rename(full_demo_path, path+new_demo_name)
 
-	input("Done.")
+	raw_input("Done.")
